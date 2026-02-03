@@ -37,8 +37,6 @@ class SessionMiddleware
         );
 
         $responseData = $response->json();
-        
-        echo json_encode($responseData).PHP_EOL;exit();
 
         if (! isset($responseData['session']) || ! is_array($responseData['session'])) {
             return response()->json(['message' => 'Invalid session data'], 401);
